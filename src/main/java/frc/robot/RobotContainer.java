@@ -5,13 +5,15 @@
 package frc.robot;
 
 import frc.robot.commands.Auto;
-import frc.robot.commands.moveMotor;
+import frc.robot.commands.MoveMotor;
+import frc.robot.subsystems.MotorSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class RobotContainer {
   private final Command auto = new Auto();
-  private final Command moveForward = new moveMotor();
+  private final Command moveForward = new MoveMotor();
+  private final MotorSubsystem motorSubsystem = new MotorSubsystem();
 
   private final CommandXboxController driverController = new CommandXboxController(0);
 

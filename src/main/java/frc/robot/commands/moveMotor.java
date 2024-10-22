@@ -8,15 +8,14 @@ import edu.wpi.first.wpilibj2.command.Command;
 
 import frc.robot.subsystems.MotorSubsystem;
 
-public class moveMotor extends Command {
+public class MoveMotor extends Command {
   private final MotorSubsystem motorSubsystem = new MotorSubsystem();
-  public moveMotor() {
+  public MoveMotor() {
     addRequirements(motorSubsystem);
   }
 
   @Override
   public void initialize() {
-    motorSubsystem.move(1.0);
     motorSubsystem.setVoltage(5.0);
   }
 
@@ -26,7 +25,6 @@ public class moveMotor extends Command {
   @Override
   public void end(boolean interrupted) {
     motorSubsystem.setVoltage(0.0);
-    motorSubsystem.move(0.0);
   }
 
   @Override
